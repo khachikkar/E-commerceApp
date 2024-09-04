@@ -11,6 +11,7 @@ import axios from "axios"
 import Fav from "./Components/Fav/Fav"
 import Register from "./Components/Register/Register"
 import UserProfile from "./Components/UserProfile/UserProfile"
+import ProductDescription from "./Components/ProductDescription/ProductDescription"
 
 function App() {
 
@@ -77,7 +78,7 @@ const addtofav = (data) => {
 <Route path="/fav" element={<Fav fav={fav} addtocart={addtocart} />}/>
 <Route path="/register" element={<Register />}/>
 <Route path="/profile" element={<UserProfile  addtocart={addtocart} addtofav={addtofav} />}/>
-
+<Route path="/prod" element={<ProductDescription addtocart={addtocart} />}/>
     </Routes>
 
 

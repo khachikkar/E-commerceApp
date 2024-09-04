@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
+
 
 const ProductItem = ({ item, addtocart, addtofav }) => {
 
@@ -33,11 +35,14 @@ const ProductItem = ({ item, addtocart, addtofav }) => {
     }
   };
 
+  const navigate = useNavigate();
+
+
   return (
     <div className='pr'>
       <HeartIcon addtofav={addtofav} />
       <div className="imagee">
-        <img className='image ia' src={item.image} alt="" />
+        <img onClick={()=> navigate('/prod', {state:{item}})} className='image ia' src={item.image} alt="" />
       </div>
       <br />
       <p className='tt'>{item.name}</p>
