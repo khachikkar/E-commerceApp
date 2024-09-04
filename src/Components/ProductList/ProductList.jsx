@@ -1,6 +1,6 @@
 
 import ProductItem from '../ProductItem/ProductItem'
-
+import PropertyTypes from "prop-types"
 
 
 import jew from "../../../jew.json"
@@ -35,5 +35,20 @@ const ProductList = ({data, addtocart, addtofav}) => {
     </div>
   )
 }
+
+
+ProductItem.PropertyTypes = {
+  data:PropertyTypes.shape({
+      id: PropertyTypes.number.isRequired,
+      name:PropertyTypes.string.isRequired,
+      price: PropertyTypes.oneOfType([PropertyTypes.string, PropertyTypes.number]),
+      image: PropertyTypes.string
+  }
+  ),
+  addtocart: PropertyTypes.func,
+  addtofav: PropertyTypes.func
+  }
+
+
 
 export default ProductList
