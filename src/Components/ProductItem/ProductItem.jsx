@@ -4,7 +4,7 @@ import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 
 
-const ProductItem = ({ item, addtocart, addtofav }) => {
+const ProductItem = ({ item, addtocart, addtofav, delprod }) => {
 
 
     const [isFilled, setIsFilled] = useState(false);
@@ -48,6 +48,7 @@ const ProductItem = ({ item, addtocart, addtofav }) => {
       <p className='tt'>{item.name}</p>
       <p className='pp'>${item.price}</p>
       <button onClick={() => addtocart(item)} className='sbutton prb'>add to cart</button>
+      {/* <button onClick={()=>delprod(item.id)}>delate</button> */}
     </div>
   );
 };

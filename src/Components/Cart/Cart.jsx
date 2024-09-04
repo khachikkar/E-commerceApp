@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Cart = ({ basket, setBasket }) => {
+
+
+const _tax = 5
+
+const [tot, setTot] = useState(0)
+const [subtot, setSubtot] = useState(0)
+useEffect(()=>{
+  const total = basket.reduce((acc, item) => acc + item.price * item.quantity, 0)
+  console.log(total)
+  setTot(total + (total * _tax / 100))
+  setSubtot(total)
+}, [basket])
+
+
+const increment = id =>{
+setBasket(prev=> prev.map(item=> item.id === id ? {...item, quantity: item.quantity+1} : item))
+}
+
+const decrement = id =>{
+  setBasket(prev=> prev.map(item=> item.id === id ? {...item, quantity: item.quantity-1 || 1} : item))
+  }
+
+
+  const remove = id =>{
+    setBasket(prev=> prev.filter(item=> item.id != id))
+    }
+
+
   return (
     <div className="cart">
       <h1>My Cart</h1>
@@ -25,12 +53,41 @@ const Cart = ({ basket, setBasket }) => {
                 <td>${item.price}</td>
                 <td>{item.quantity}</td>
                 <td>$ {item.price * item.quantity}</td>
-                <td>Actions</td>
+                <td >
+                  <div className="bb">
+                  <button onClick={()=>decrement(item.id)} className="abtn mns">-</button>
+                  <button onClick={()=>increment(item.id)}  className="abtn pls">+</button>
+                  <button onClick={()=>remove(item.id)}  className="abtn rmv">X</button>
+                  </div>
+                  
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <div className="i">
+          
+         <div className="subt">
+          <h2>Subtotal:</h2>
+          <h3>${subtot}</h3>
+         </div>
+
+         <div className="subt">
+<div className="g">
+<h2>Tax:</h2>
+<p>Taxes are appled by <strong>Republic of Armenia</strong> laws, terms and conditions.</p>
+</div>
+<h3>{_tax}%</h3>
+         </div>
+
+         <div className="subt">
+          <h2>Total:</h2>
+          <h3>${tot.toFixed(2)}</h3>
+         </div>
+
+         <button className="pbutton">Purchase</button>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 {
   "jewelry": [
     {
-      "id": 1,
+      "id": "1",
       "name": "HoloGlow Necklace",
       "price": 150,
       "category": "Necklace",
@@ -9,7 +9,7 @@
       "description": "A sleek choker with embedded holographic gemstones that change color based on your mood, reflecting the neon lights of a futuristic cityscape."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Quantum Loop Necklace",
       "price": 200,
       "category": "Necklace",
@@ -17,7 +17,7 @@
       "description": "A silver necklace made of quantum particles that seem to float and intertwine, creating a mesmerizing loop around your neck."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Celestial Pendant",
       "price": 175,
       "category": "Necklace",
@@ -25,7 +25,7 @@
       "description": "A pendant with a holographic core that displays different celestial bodies depending on the time of day, suspended by an invisible wire."
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Levitating Diamond Ring",
       "price": 300,
       "category": "Ring",
@@ -33,7 +33,7 @@
       "description": "An interlocking ring with a floating, levitating diamond in the center, surrounded by a magnetic field that creates a mesmerizing light show when moved."
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Cyber Circuit Ring",
       "price": 250,
       "category": "Ring",
@@ -41,23 +41,23 @@
       "description": "A minimalist ring with embedded micro-circuits that allow communication with AI assistants, combining futuristic design with advanced technology."
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Aurora Earrings",
       "price": 180,
-      "category": "Earrings",
+      "category": "Earring",
       "image": "./src/assets/images/2.jpeg",
       "description": "Transparent earrings with crystalline materials that emit soft, pulsating lights, synchronized with the wearer's heartbeat for an elegant space-age look."
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Starlight Earrings",
       "price": 195,
-      "category": "Earrings",
+      "category": "Earring",
       "image": "./src/assets/images/5.jpeg",
       "description": "Geometric earrings that display a holographic light show, inspired by the starry skies of distant galaxies, perfect for a night out in a futuristic world."
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "BioLum Cuff",
       "price": 220,
       "category": "Bracelet",
@@ -65,7 +65,7 @@
       "description": "A glowing, iridescent arm cuff with intricate circuitry patterns that respond to touch, allowing the wearer to control smart devices through gestures."
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Galactic Crown",
       "price": 500,
       "category": "Crown",
@@ -73,7 +73,7 @@
       "description": "A bioluminescent crown that softly glows in the dark, with organic shapes inspired by extraterrestrial flora, designed for a regal, otherworldly look."
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Magnetic Buckle",
       "price": 80,
       "category": "Buckle",
@@ -81,12 +81,60 @@
       "description": "A futuristic buckle with magnetic properties, allowing for easy adjustments and a secure fit, ideal for space travelers and adventurers."
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Plasma Belt Buckle",
       "price": 95,
       "category": "Buckle",
       "image": "./src/assets/images/9.jpeg",
       "description": "A buckle that emits a soft plasma glow, creating a unique and eye-catching accessory for any futuristic outfit."
+    },
+    {
+      "id": "12",
+      "price": 193,
+      "image": "https://i.pinimg.com/originals/15/ab/bc/15abbcec55f3250f38d69fc2309930a9.jpg",
+      "description": "Ays cepy klini qo uxeicy voxj kyanqum.",
+      "category": "Necklace",
+      "name": "Necklace Heart"
+    },
+    {
+      "id": "13",
+      "price": 10,
+      "image": "https://i.pinimg.com/736x/ce/b0/d2/ceb0d278f1e80649cdd09d70119d1dc9.jpg",
+      "description": "Ring is named after ANI capital city from BC.5000",
+      "category": "Ring",
+      "name": "Ring \"Ani\""
+    },
+    {
+      "id": "14",
+      "price": 20,
+      "image": "https://i.pinimg.com/474x/98/38/8b/98388b3be4103fcf6541d68372c70d47.jpg",
+      "description": "test1",
+      "category": "Ring",
+      "name": "Ring Love"
+    },
+    {
+      "id": "15",
+      "price": 200,
+      "image": "https://i.pinimg.com/474x/99/e0/50/99e050ff6ab9a0eef17b5b52c56e1da0.jpg",
+      "description": "Key features of Cartier bracelets:  Iconic designs: Cartier has created a number of iconic bracelet styles, including the   Love bracelet, Trinity bracelet, and Juste un Clou bracelet. These designs are instantly recognizable and have become symbols of luxury and sophistication.    Exceptional craftsmanship: Every Cartier bracelet is meticulously crafted by skilled artisans, ensuring the highest quality and attention to detail. From the intricate settings to the flawless polishing, each piece is a testament to Cartier's commitment to excellence.    Versatility: Cartier bracelets can be worn for a variety of occasions, from casual outings to formal events. Whether you're looking for a statement piece or a subtle accessory, there's a Cartier bracelet to suit your style.    Timeless appeal: Cartier bracelets are designed to last a lifetime. Their classic styles and enduring quality make them a valuable investment for generations to come.",
+      "category": "bracelet",
+      "name": "Cartier Bracelet"
+    },
+    {
+      "id": "16",
+      "price": 300,
+      "image": "https://i.pinimg.com/474x/33/86/42/338642ca1c43c80cc92a499151e5e98b.jpg",
+      "description": "Cartier rings are renowned for their exquisite craftsmanship, timeless designs, and iconic status. Crafted from the finest materials, such as precious metals like gold, platinum, and silver, these rings are often adorned with dazzling gemstones, including diamonds, sapphires, rubies, and emeralds.",
+      "category": "ring",
+      "name": "Cartier Ring by OrbiJew"
+    },
+    {
+      "id": "17",
+      "price": 120,
+      "image": "https://i.pinimg.com/474x/87/7e/7a/877e7a04acd465d4d0e4a827dfc24fff.jpg",
+      "description": "Pregomesh is a renowned Armenian jewelry brand that specializes in creating unique and stylish pieces inspired by the country's rich heritage.   Their earrings are particularly noteworthy for their intricate designs, high-quality materials, and ethical production practices.",
+      "category": "earring",
+      "name": "\"AG\" Earing by Pregomesh & OrbiJew"
     }
   ]
 }

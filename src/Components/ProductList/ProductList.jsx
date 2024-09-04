@@ -6,7 +6,7 @@ import PropertyTypes from "prop-types"
 import jew from "../../../jew.json"
 
 
-const ProductList = ({data, addtocart, addtofav}) => {
+const ProductList = ({data, addtocart, addtofav, delprod}) => {
 
 
 
@@ -25,9 +25,9 @@ const ProductList = ({data, addtocart, addtofav}) => {
       
 
          
-        jew.jewelry.map(item =>{
+        data.map(item =>{
             return (
-                <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}/>
+                <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}  />
             )
         } )
       }

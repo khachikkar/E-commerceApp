@@ -12,6 +12,8 @@ import Fav from "./Components/Fav/Fav"
 import Register from "./Components/Register/Register"
 import UserProfile from "./Components/UserProfile/UserProfile"
 import ProductDescription from "./Components/ProductDescription/ProductDescription"
+import Adminka from "./Components/Adminka/Adminka"
+import ProductFiltered from "./Components/ProductFiltered/ProductFiltered"
 
 function App() {
 
@@ -32,6 +34,7 @@ const [fav, setFav] = useState([])
   },[])
 
 
+
 // function to add a product in cart
 
 const addtocart = product => {
@@ -48,6 +51,7 @@ const addtocart = product => {
   })
 }
 
+// function to add a product in favlist
 
 const addtofav = (data) => {
  setFav(prev=>{
@@ -59,6 +63,25 @@ const addtofav = (data) => {
  })
 };
 
+
+// functions for admin pannel
+
+const addprod = (prod, resetForm) =>{
+  axios.post(`http://localhost:3003/jewelry`, prod).then(res=>{
+    setData([...data, prod])
+    resetForm()
+  })
+
+}
+
+const delprod = (id, resetForm) =>{
+  axios.delete(`http://localhost:3003/jewelry/${id}`)
+  .then(
+setData(data.filter(item=> item.id != id))
+
+  )
+  resetForm()
+}
 
 
 
@@ -74,11 +97,13 @@ const addtofav = (data) => {
     <Routes>
 
 <Route path="/cart" element={<Cart basket={basket} setBasket={setBasket}  />}/>
-<Route path="*" element={<Shop data={data} addtocart={addtocart} addtofav={addtofav}/> }/>
+<Route path="*" element={<Shop data={data} addtocart={addtocart} addtofav={addtofav}   delprod={delprod}  /> }/>
 <Route path="/fav" element={<Fav fav={fav} addtocart={addtocart} />}/>
 <Route path="/register" element={<Register />}/>
-<Route path="/profile" element={<UserProfile  addtocart={addtocart} addtofav={addtofav} />}/>
+<Route path="/profile" element={<UserProfile mdata={data}  addtocart={addtocart} addtofav={addtofav} />}/>
 <Route path="/prod" element={<ProductDescription addtocart={addtocart} />}/>
+<Route path="/adminka" element={<Adminka addprod={addprod} delprod={delprod} />}/>
+<Route path="/prodfiltered" element={<ProductFiltered data={data} />}/>
     </Routes>
 
 

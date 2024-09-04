@@ -1,51 +1,66 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { AiFillHeart } from 'react-icons/ai';
+import { AiFillHeart } from "react-icons/ai";
 
 import { CiSearch, CiUser, CiHeart, CiShoppingCart } from "react-icons/ci";
 
-const Nav = ({basket, fav}) => {
+const Nav = ({ basket, fav }) => {
+  const [active, setActive] = useState(null);
 
-const [active, setActive] = useState(null)
+  const [icon, setIcon] = useState(false);
 
-const [icon, setIcon] = useState(false)
+  const items = ["Shop", "Ring", "EarRing", "Necklace", "Bracelet", "Buckle", "Crown"];
 
-const items = ['Shop','Rings', 'EarRings', 'Necklace', 'Bracelets', 'Brows'];
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
-    <div className='navbar'>
+    <div className="navbar">
       <div className="navlogo">
-        <h1 onClick={()=>navigate("*")}>OrbiJew</h1>
+        <h1 onClick={() => navigate("*")}>OrbiJew</h1>
       </div>
       <div className="navmenu">
-      <ul>
-      {items.map((item, index) => (
-        <li
-          key={index}
-          onClick={() => setActive(index)}
-          className={active === index ? 'active' : ''}
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-    <span className='men'>Menu</span>
+        <ul>
+          {items.map((item, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                setActive(index)
+                navigate(`/prodfiltered`, {state:{item}})
+              }}
+            
+              className={active === index ? "active" : ""}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+        <span className="men">Menu</span>
       </div>
-      <div className='navicons'>
-        <CiSearch  onClick={() => setIcon(!icon)} className={icon ? 'active' : ''}  size={24} />
-        <CiUser onClick={()=>navigate("/register")} size={24} />
-     {fav.length ?   <AiFillHeart onClick={()=>navigate("/fav")}  size={24} style={{ color: 'red' }} />  : <CiHeart  onClick={()=>navigate("/fav")} size={24} /> }
-        <div onClick={()=>navigate("/cart")} className='cc'> 
+      <div className="navicons">
+      <button onClick={()=>navigate("/adminka")} className="abutton">Admin</button>
+        <CiSearch
+          onClick={() => setIcon(!icon)}
+          className={icon ? "active" : ""}
+          size={24}
+        />
+        <CiUser onClick={() => navigate("/register")} size={24} />
+        {fav.length ? (
+          <AiFillHeart
+            onClick={() => navigate("/fav")}
+            size={24}
+            style={{ color: "red" }}
+          />
+        ) : (
+          <CiHeart onClick={() => navigate("/fav")} size={24} />
+        )}
+        <div onClick={() => navigate("/cart")} className="cc">
           <CiShoppingCart size={24} />
-          <div className='ccn'>{basket.length}</div>
+          <div className="ccn">{basket.length}</div>
         </div>
-       
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
