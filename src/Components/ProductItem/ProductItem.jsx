@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 const ProductItem = ({ item, addtocart, addtofav, delprod }) => {
 
 
+
+
     const [isFilled, setIsFilled] = useState(false);
 
   const HeartIcon = ({ addtofav }) => {

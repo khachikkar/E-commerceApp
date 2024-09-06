@@ -135,6 +135,30 @@
       "description": "Pregomesh is a renowned Armenian jewelry brand that specializes in creating unique and stylish pieces inspired by the country's rich heritage.   Their earrings are particularly noteworthy for their intricate designs, high-quality materials, and ethical production practices.",
       "category": "earring",
       "name": "\"AG\" Earing by Pregomesh & OrbiJew"
+    },
+    {
+      "id": "19",
+      "price": 220,
+      "image": "https://pregomesh.com/cdn/shop/files/bracelet-anchor-566003_1080x.jpg?v=1720188573",
+      "description": "Inspired by the symbolism of anchors, which traditionally represent stability, strength, and hope the Bracelet “Anchor” features a prominent lock symbol as its centerpiece. Crafted from materials like sterling silver, Bracelet “Anchor” is not only aesthetically pleasing but also durable and suitable for everyday wear. ",
+      "category": "bracelet",
+      "name": "Bracelet “Anchor”"
+    },
+    {
+      "id": "20",
+      "price": 300,
+      "image": "https://pregomesh.com/cdn/shop/products/ring-baze-983025_900x.jpg?v=1702449338",
+      "description": "Baze\" – a commanding presence in the Pregomesh Men's Collection. Translated from Armenian, \"Baze\" embodies the strength and might of the Armenian eagle, renowned as one of the most powerful in the world. This ring is a tribute to the majestic spirit that soars with unmatched power and grace.",
+      "category": "ring",
+      "name": "Ring \"Baze\""
+    },
+    {
+      "id": "21",
+      "price": 1000,
+      "image": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dwc08916b3/Y0785220/Y0785220_F078524009_E01_ZHC.jpg?sw=1800&sh=1200",
+      "description": "Inspiration for the creation of Sauvage Eau de Parfum was taken from the desert in the magical hour of twilight: mixed with the coolness of the night, the burning desert air exudes profound scents.  Sauvage Eau de Parfum is thus the olfactory interpretation of a moment tinted with a thick blue that unleashes the wildest instincts. In the hour when the wolves come out and the sky is set ablaze, a new magic unfolds.",
+      "category": "Crown",
+      "name": "Sauvage Eau de Parfum"
     }
   ]
 }

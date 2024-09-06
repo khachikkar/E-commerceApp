@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Hero from '../Hero/Hero'
 import ProductList from '../ProductList/ProductList'
+import { ShopContext } from '../../ShopContext'
 
-const Shop = ({data, addtocart, addtofav, delprod}) => {
+const Shop = () => {
+
+
+
+const {data, addtocart, addtofav, delprod, filteredData} = useContext(ShopContext)
+
   return (
     <div className='shop'>
       {/* <br></br>
       <br />
       <br /> */}
     <Hero />
-    <ProductList data={data} addtocart={addtocart} addtofav={addtofav} delprod={delprod}/>
+    <ProductList data={filteredData} addtocart={addtocart} addtofav={addtofav} delprod={delprod}/>
     </div>
   )
 }

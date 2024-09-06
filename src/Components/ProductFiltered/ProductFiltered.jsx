@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import Shop from '../Shop/Shop';
+import { ShopContext } from '../../ShopContext';
 
-const ProductFiltered = ({ data }) => {
-  const [filteredData, setFilteredData] = useState(data);
+const ProductFiltered = () => {
+
+
+const {data, filteredData, setFilteredData} = useContext(ShopContext)
+
+
+
   const location = useLocation();
   const { item } = location.state || {};
 
@@ -18,7 +24,7 @@ const ProductFiltered = ({ data }) => {
 
   return (
     <div>
-      <Shop data={filteredData} />
+      <Shop  />
     </div>
   );
 };

@@ -97,13 +97,20 @@ width: 100%;
 .hero{
   /* border: 1px solid red; */
   height: 500px;
-  background-image: url("https://resizer.mail.ru/p/4813d0c5-e36f-5db5-8b88-91c660b9847a/AQAFFhxP8Eot05DNKjJj-i2_NdpDn0ZwRpyUpCiiFQt_8V3lw8uwZDgQuNgeC0Gy9-uc3pboUzFwohTarLahvTbPBds.jpg");
-  background-size: cover;
+  background-image: url("../src//assets//images/hero.png");
+  background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
 
+}
+
+@media (max-width: 500px) {
+  .hero {
+    background-size: cover;
+    height: 300px; /* You can adjust this based on how much height you want on smaller screens */
+  }
 }
 
 .main{
@@ -693,4 +700,73 @@ gap: 24px;
   button{
     width: 300px;
   }
+}
+
+/* Footer */
+.footer{
+  margin-top: 60px;
+  /* height: 300px; */
+  background-color: black;
+  padding: 20px 80px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cont{
+/* border: 1px solid red; */
+  height: 280px;
+  width: 250px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.footer{
+
+  h4{
+    margin-bottom: 50px;
+    /* border: 1px solid green; */
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  li{
+    list-style: none;
+  }
+}
+
+.subscribe{
+  input{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+  }
+ 
+}
+
+@media screen and (max-width:500px) {
+.footer{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 8px;
+}  
+
+ul{
+  align-items: center;
+}
+li{
+  text-align: center;
+  align-items: center;
+}
+.cont{
+  justify-content: center;
+  align-items: center;
+}
 }

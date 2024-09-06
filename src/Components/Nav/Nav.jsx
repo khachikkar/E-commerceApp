@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { AiFillHeart } from "react-icons/ai";
 
 import { CiSearch, CiUser, CiHeart, CiShoppingCart } from "react-icons/ci";
+import { ShopContext } from "../../ShopContext";
 
-const Nav = ({ basket, fav }) => {
+const Nav = () => {
+
+const {basket, fav} = useContext(ShopContext)
+
+
   const [active, setActive] = useState(null);
 
   const [icon, setIcon] = useState(false);

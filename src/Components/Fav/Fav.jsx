@@ -1,7 +1,10 @@
 import React from 'react'
 import ProductItem from '../ProductItem/ProductItem'
+import { ShopContext } from '../../ShopContext'
+import { useContext } from 'react'
+const Fav = () => {
 
-const Fav = ({fav, addtocart}) => {
+const {fav, addtocart} = useContext(ShopContext)
 
     console.log(fav)
   return (

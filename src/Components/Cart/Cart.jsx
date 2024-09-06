@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../../ShopContext";
 
-const Cart = ({ basket, setBasket }) => {
+const Cart = () => {
+
+const {basket, setBasket} = useContext(ShopContext)
 
 
 const _tax = 5

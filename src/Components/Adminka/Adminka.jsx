@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { ShopContext } from "../../ShopContext";
+import ProductItem from "../ProductItem/ProductItem";
 
 const schema = yup.object({
   id: yup.string().required("id must start from 11"),
@@ -18,7 +20,13 @@ const sc =yup.object({
   });
   
 
-const Adminka = ({ addprod, delprod }) => {
+const Adminka = () => {
+
+
+const {data, addprod, delprod} = useContext(ShopContext)
+
+
+
   const {
     register: register,
     reset:reset,
@@ -38,9 +46,9 @@ const Adminka = ({ addprod, delprod }) => {
     <div className="adminka">
        
       <form onSubmit={handleSubmit((data)=>addprod(data, reset))} className="avn">
+      <h2>Total Products length: {data.length}</h2>
       <h1>Add a Product</h1>
         <label>Product ID</label>
-        <label>Pls Remember the Id and start from 12</label>
         {adderrors.id && <p className="errorrs">{adderrors.id.message}</p>}
         <input {...register("id")} className={adderrors.id ? "er" : ""} type="text" placeholder="Product Id" />
 
@@ -82,6 +90,12 @@ const Adminka = ({ addprod, delprod }) => {
         <input {...deleteRegister("id")}  className={deleteerrors.price ? "er" : ""} type="text" placeholder="Product Id" />
         <button className="pbutton">Remove a product</button>
     </form>
+
+<h1>Products</h1>
+{
+    // data.map((item)=> <ProductItem key={item.id} data={item}/>)
+}
+
     </div>
   );
 };

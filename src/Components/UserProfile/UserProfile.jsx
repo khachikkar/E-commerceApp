@@ -1,13 +1,16 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Shop from '../Shop/Shop';
+import { ShopContext } from '../../ShopContext';
 
 
 
-const UserProfile = ({mdata, addtocart, addtofav}) => {
+const UserProfile = () => {
+
+const {data, addtocart, addtofav} = useContext(ShopContext)
 
     const location = useLocation()
-    const {data} = location.state || {}
+    const {dataa} = location.state || {}
 
     console.log(data)
 
@@ -15,7 +18,7 @@ const UserProfile = ({mdata, addtocart, addtofav}) => {
   return (
     <div className='prof'>
       <h1>Welcome, Dear {data.username}</h1>
-      <Shop data={mdata} addtocart={addtocart} addtofav={addtofav}/>
+      <Shop data={data} addtocart={addtocart} addtofav={addtofav}/>
       {/* Display user information here */}
     </div>
   );
