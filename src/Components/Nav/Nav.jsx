@@ -22,7 +22,7 @@ const {basket, fav} = useContext(ShopContext)
   return (
     <div className="navbar">
       <div className="navlogo">
-        <h1 onClick={() => navigate("*")}>OrbiJew</h1>
+        <h1 onClick={() => navigate("/*")}>OrbiJew</h1>
       </div>
       <div className="navmenu">
         <ul>
@@ -43,7 +43,7 @@ const {basket, fav} = useContext(ShopContext)
         <span className="men">Menu</span>
       </div>
       <div className="navicons">
-      <button onClick={()=>navigate("/adminka")} className="abutton">Admin</button>
+      {/* <button onClick={()=>navigate("/adminka")} className="abutton">Admin</button> */}
         <CiSearch
           onClick={() => setIcon(!icon)}
           className={icon ? "active" : ""}

@@ -17,7 +17,7 @@ const ProductList = ({data, addtocart, addtofav, delprod}) => {
       <div className="prods">
 
       {
-        // data && data.map(item =>{
+        // jew.jewelry.map(item =>{
         //     return (
         //         <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}/>
         //     )

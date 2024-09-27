@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
+
+
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../services/firebase/firebase";
 
 const schema = yup.object({
   username: yup.string()
@@ -33,36 +37,74 @@ const Register = () => {
 
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handlereg(email, password) {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User registered successfully");
+    } catch (error) {
+      console.error("Error registering user:", error.message);
+    }
+  }
+
   return (
     <div className="reg">
       <div className="regcont">
         <h2>Register</h2>
-        <form onSubmit={handleSubmit((data) => {
-            console.log(data);
-           
-            navigate('/profile', {state:{data}});
-            reset
-        })}>
+        <form
+          onSubmit={handleSubmit((dataa) => {
+            console.log(dataa);
+            
+           // Call handlereg with email and password from form data
+            handlereg(dataa.email, dataa.password);
+
+            navigate('/profile', { state: { dataa } });
+            reset();
+          })}
+        >
           {/* Username */}
           {errors.username && <p className='errorrs'>{errors.username.message}</p>}
           <input className={errors.username ? "er" : ""} {...register("username")} type="text" placeholder="Username" />
 
           {/* Email */}
           {errors.email && <p className='errorrs'>{errors.email.message}</p>}
-          <input className={errors.email ? "er" : ""} {...register("email")} type="email" placeholder="Email" />
+          <input
+            className={errors.email ? "er" : ""}
+            {...register("email")}
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
           {/* Password */}
           {errors.password && <p className='errorrs'>{errors.password.message}</p>}
-          <input className={errors.password ? "er" : ""} {...register("password")} type="password" placeholder="Password" />
+          <input
+            className={errors.password ? "er" : ""}
+            {...register("password")}
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           {/* Confirm Password */}
           {errors.confirmpassword && <p className='errorrs'>{errors.confirmpassword.message}</p>}
-          <input className={errors.confirmpassword ? "er" : ""} {...register("confirmpassword")} type="password" placeholder="Confirm Password" />
+          <input
+            className={errors.confirmpassword ? "er" : ""}
+            {...register("confirmpassword")}
+            type="password"
+            placeholder="Confirm Password"
+          />
 
           <button className="pbutton">Register</button>
         </form>
-        <div className="terms"><input type="checkbox" />
-          <p>I accept terms and conditions of this site usage</p></div>
+        <div className="terms">
+          <input type="checkbox" />
+          <p>I accept terms and conditions of this site usage</p>
+        </div>
         <p>Already have an Account? <button className="lbuuton">Log In</button></p>
       </div>
       <div className="imggg">
@@ -75,4 +117,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Register

@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../../ShopContext";
 
+// optimalacnenq basket i canr hashvarky //
+import { useMemo } from "react";
+
+
 const Cart = () => {
 
 const {basket, setBasket} = useContext(ShopContext)
@@ -10,11 +14,21 @@ const _tax = 5
 
 const [tot, setTot] = useState(0)
 const [subtot, setSubtot] = useState(0)
+
+
+const total = useMemo(()=>{
+  return basket.reduce((acc, item) => acc + item.price * item.quantity, 0)
+},[basket])
+
+
 useEffect(()=>{
-  const total = basket.reduce((acc, item) => acc + item.price * item.quantity, 0)
+
+
+
+  setSubtot(total)
   console.log(total)
   setTot(total + (total * _tax / 100))
-  setSubtot(total)
+
 }, [basket])
 
 
