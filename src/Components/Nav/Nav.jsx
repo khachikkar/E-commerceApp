@@ -22,7 +22,7 @@ const {basket, fav} = useContext(ShopContext)
   return (
     <div className="navbar">
       <div className="navlogo">
-        <h1 onClick={() => navigate("/*")}>OrbiJew</h1>
+        <h1 onClick={() => navigate("/prodfiltered")}>OrbiJew</h1>
       </div>
       <div className="navmenu">
         <ul>
