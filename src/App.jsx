@@ -20,21 +20,21 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   const { data, setData } = useContext(ShopContext);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3003/jewelry`)
-      .then((response) => {
-        console.log("Response:", response);
-        setData(response.data); // This updates the data in the context
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:3003/jewelry`)
+  //     .then((response) => {
+  //       console.log("Response:", response);
+  //       setData(response.data); // This updates the data in the context
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    console.log("Data is now:", data); // Logs data when it changes
-  }, [data]); // Dependency on data
+  // useEffect(() => {
+  //   console.log("Data is now:", data); // Logs data when it changes
+  // }, [data]); // Dependency on data
 
   return (
     <div>

@@ -4,9 +4,17 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
 
+import { FaGoogle } from "react-icons/fa6";
+
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/firebase/firebase";
+
+import { GoogleAuthProvider , signInWithPopup, signInWithRedirect} from "firebase/auth";
+
+
+
+
 
 const schema = yup.object({
   username: yup.string()
@@ -48,6 +56,26 @@ const Register = () => {
       console.error("Error registering user:", error.message);
     }
   }
+
+
+const handleGoogle = async (e)=> {
+  e.preventDefault();
+  const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      // Successful Google Sign-In
+      console.log("Google sign-in successful:", result.user);
+
+      // Navigate to the profile page after successful sign-in
+      navigate("/profile", { state: { dataa: result.user } });
+    } catch (error) {
+      console.error("Google sign-in error:", error.message);
+    }
+}
+
+
+
+
 
   return (
     <div className="reg">
@@ -100,6 +128,7 @@ const Register = () => {
           />
 
           <button className="pbutton">Register</button>
+          <button onClick={handleGoogle} className="pbutton google"> <FaGoogle /> Register with Google</button>
         </form>
         <div className="terms">
           <input type="checkbox" />

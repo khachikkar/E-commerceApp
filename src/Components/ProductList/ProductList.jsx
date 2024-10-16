@@ -8,7 +8,7 @@ import jew from "../../../jew.json"
 
 const ProductList = ({data, addtocart, addtofav, delprod}) => {
 
-
+console.log(jew.jewelry)
 
 
   return (
@@ -17,19 +17,19 @@ const ProductList = ({data, addtocart, addtofav, delprod}) => {
       <div className="prods">
 
       {
-        // jew.jewelry.map(item =>{
-        //     return (
-        //         <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}/>
-        //     )
-        // } )
+        jew.jewelry.map(item =>{
+            return (
+                <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}/>
+            )
+        } )
       
 
          
-        data.map(item =>{
-            return (
-                <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}  />
-            )
-        } )
+        // data.map(item =>{
+        //     return (
+        //         <ProductItem key={item.id} item={item} addtocart={addtocart} addtofav={addtofav}  />
+        //     )
+        // } )
       }
       </div>
     </div>

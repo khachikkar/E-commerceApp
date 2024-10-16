@@ -535,7 +535,7 @@ flex-direction: column;
   justify-content: center;
   align-items:center;
   padding-top: 60px;
-  height: 800px;
+  /* height: 800px; */
 flex-wrap: wrap;
   
 
@@ -552,7 +552,7 @@ flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 500px;
+  /* height: 500px; */
  border: 1px solid black;
 gap: 20px;
 align-items: center;
@@ -769,4 +769,16 @@ li{
   justify-content: center;
   align-items: center;
 }
+}
+
+
+
+.google{
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
